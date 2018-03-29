@@ -84,6 +84,7 @@ export default {
       let rows = [] // 每行的行高
       let colMaxWidth = 0 // 数据最大宽度
       let rowMaxHeight = 0 // 数据最大高度      
+      let maxW = (options.cellMaxWidth || Math.ceil(width / 3)) - options.paddingLR
       this.cellMap = []
       this.TDArr.forEach((row, i) => {
         let maxHeight = options.fontSize + options.paddingTB
@@ -100,7 +101,6 @@ export default {
           }
           // 处理多行
           let w = ctx.measureText(cell).width
-          let maxW = (options.cellMaxWidth || Math.ceil(width / 3)) - options.paddingLR
           if (w > maxW) {
             this.cellMap[i][j].lineNum = Math.ceil(w / maxW)
             this.cellMap[i][j].length = Math.ceil(w / this.cellMap[i][j].lineNum / Math.floor(w / cell.length))
@@ -123,7 +123,7 @@ export default {
       this.rowHeight = rows
       if (colMaxWidth < width) {
         const avg = width / this.colWidth.length
-        this.colWidth = this.colWidth.map(v => avg)
+        this.colWidth = this.colWidth.map(v => v > avg ? v : avg)
       }
       if (rowMaxHeight < height) {
         this.height = rowMaxHeight
