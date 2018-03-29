@@ -1,7 +1,7 @@
 {
   "name": "vue-canvas-table",
   "description": "使用Canvas实现的表格组件，数据量大的情况下与使用标签实现的表格控件相比速度会更快",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "author": "Dengrc <624616667@qq.com>",
   "license": "MIT",
   "private": false,

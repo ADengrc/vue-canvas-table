@@ -57,7 +57,7 @@ npm run dev
   },
   width: 0, // canvas宽度
   height: 0, // canvas高度
-  maxCellWidth: 0, // 最大单元格宽度，默认屏幕1/3
+  cellMaxWidth: 0, // 最大单元格宽度，默认屏幕1/3
   paddingLR: 22, // 左右内间距
   paddingTB: 22, // 上下内间距
   lineHeight: 8,    // 多行文字行高
